@@ -37,11 +37,26 @@ function eliminar(array, num) {
 
   function habilitarBoton(){
     sortear.disabled=false;
+    reiniciar.disabled=false;
   }
 
   function deshabilitarBoton(){
     sortear.disabled=true;
+    reiniciar.disabled=true;
   }
+
+  function mostrarAlerta() {
+      
+    var respuesta = confirm("Se reiniciará el juego");
+          
+    if (respuesta) {
+        var total=reiniciarAbecedario();
+        console.log(total);
+        imagen.setAttribute("src","img/inicia.jpg");
+    } else {
+        alert("Continua con el juego");
+    }
+}
 
   //click en boton sortear
   sortear.addEventListener("click", (event) => {
@@ -154,8 +169,7 @@ function eliminar(array, num) {
 
   //click en boton reiniciar
   reiniciar.addEventListener("click",(event)=>{
-    var total=reiniciarAbecedario();
-    console.log(total);
-    imagen.setAttribute("src","img/inicia.jpg");
+    mostrarAlerta();
+    
   });
 
