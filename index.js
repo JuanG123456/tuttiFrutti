@@ -35,10 +35,19 @@ function eliminar(array, num) {
     
   }
 
+  function habilitarBoton(){
+    sortear.disabled=false;
+  }
+
+  function deshabilitarBoton(){
+    sortear.disabled=true;
+  }
+
   //click en boton sortear
   sortear.addEventListener("click", (event) => {
-
+    
     setTimeout(()=>{
+      deshabilitarBoton();
       imagen.setAttribute("src","img/3.jpg");
     },1000)
     setTimeout(()=>{
@@ -134,10 +143,12 @@ function eliminar(array, num) {
         default:
           imagen.setAttribute("src","img/fin.jpg");
           break;
-      }
-      
+      }      
     },4000)
-
+    setTimeout(()=>{
+      habilitarBoton();
+    },5000)
+    
     
   });
 
